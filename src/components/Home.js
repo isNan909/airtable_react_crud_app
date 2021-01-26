@@ -16,15 +16,24 @@ function Home() {
       });
   }, []);
 
-
   return (
     <div className="Home">
-      <h2 className="app-heading">
+      <h3 className="app-heading mb-5 mt-4 fw-bolder">
         Airtable and React Employee CRUD Application
-      </h2>
-      {employees.map((e) => (
-        <Employee key={e.id} employee={e} />
-      ))}
+      </h3>
+      <div className="row">
+        {employees.length > 0 ? (
+          <>
+            {employees.map((e) => (
+              <Employee key={e.id} employee={e} />
+            ))}
+          </>
+        ) : (
+          <div className="spinner-border mx-auto text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -2,22 +2,28 @@ import React from 'react';
 
 function Employee({ employee }) {
   return (
-    <div>
-      <ul>
-        <li>{employee.fields.Title}</li>
-        <li>{employee.fields.Email}</li>
-        <li>{employee.fields.Name}</li>
-        <li>{employee.fields.Phone}</li>
-        <li>{employee.fields.Started}</li>
-      </ul>
+    <div className="col-md-4">
+      <div className="card">
+        <div className="card-header d-flex flex-column justify-content-center">
+          <h4 className="fw-bold">{employee.fields.Name}</h4>
+          {employee.fields.Title}
+        </div>
+        <div className="card-body">
+          <div className="d-flex flex-column justify-content-center">
+            <span>
+              <i className="bi bi-phone-fill me-2"></i>
+              {employee.fields.Phone}
+            </span>
+            <span>
+              <i className="bi bi-envelope-fill me-2"></i>
+              {employee.fields.Email}
+            </span>
+          </div>
+          <p className="card-text">Started: {employee.fields.Started}</p>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Employee;
-
-// Email: "jenny@gmail.com"
-// Name: "Jenny Johnson"
-// Phone: "(986) 321-7852"
-// Started Date: "2021-01-18"
-// Title: "Full Stack Developer"
