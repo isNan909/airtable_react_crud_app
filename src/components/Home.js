@@ -3,6 +3,7 @@ import '../stylesheets/Home.css';
 import base from '../api/base';
 
 import Employee from './Employee';
+import Addemployee from './Addemployee';
 
 function Home() {
   const [employees, setEmployees] = useState([]);
@@ -33,6 +34,9 @@ function Home() {
             <span className="visually-hidden">Loading...</span>
           </div>
         )}
+      </div>
+      <div>
+        <Addemployee />
       </div>
     </div>
   );

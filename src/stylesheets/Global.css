@@ -57,3 +57,7 @@ code {
 }
 
 /* other app style to apply globally below*/
+.form-add {
+  max-width: 500px;
+  margin: auto;
+}

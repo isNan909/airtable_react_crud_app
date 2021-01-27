@@ -3,7 +3,7 @@ import React from 'react';
 function Employee({ employee }) {
   return (
     <div className="col-md-4">
-      <div className="card">
+      <div className="card homeCards">
         <div className="card-header d-flex flex-column justify-content-center">
           <h4 className="fw-bold">{employee.fields.Name}</h4>
           {employee.fields.Title}
