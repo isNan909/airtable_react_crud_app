@@ -1,12 +1,15 @@
 import React from 'react';
+import Deletebtn from './Deletebtn';
 
 function Employee({ employee }) {
+  const employeeId = employee.id;
   return (
     <div className="col-md-4">
-      <div className="card homeCards">
-        <div className="card-header d-flex flex-column justify-content-center">
+      <div className="card homeCards mb-4">
+        <div className="card-header d-flex flex-column position-relative justify-content-center">
           <h4 className="fw-bold">{employee.fields.Name}</h4>
           {employee.fields.Title}
+          <Deletebtn employeeID={employeeId} />
         </div>
         <div className="card-body">
           <div className="d-flex flex-column justify-content-center">

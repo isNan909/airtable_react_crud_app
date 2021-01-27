@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import base from '../api/base';
 
 function Addemployee() {
   const nameRef = useRef();
@@ -9,12 +10,21 @@ function Addemployee() {
 
   const addEmployee = (e) => {
     e.preventDefault();
-    const name = nameRef.current.value;
-    const position = positionRef.current.value;
-    const email = emailRef.current.value;
-    const number = numberRef.current.value;
-    const started = startedRef.current.value;
-    console.log({ name, position, email, number, started });
+    const Name = nameRef.current.value;
+    const Title = positionRef.current.value;
+    const Email = emailRef.current.value;
+    const Phone = numberRef.current.value;
+    const Started = startedRef.current.value;
+    base('employees').create(
+      { Name, Title, Email, Phone, Started },
+      function (err, record) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        prompt(record.getId());
+      }
+    );
   };
   return (
     <div className="mt-5 card p-5 form-add">

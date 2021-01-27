@@ -20,7 +20,7 @@ function Home() {
   return (
     <div className="Home">
       <h3 className="app-heading mb-5 mt-4 fw-bolder">
-        Airtable and React Employee CRUD Application
+        Airtable and React Employee Application
       </h3>
       <div className="row">
         {employees.length > 0 ? (
